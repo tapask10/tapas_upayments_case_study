@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "e0214d5d-9eb5-412d-a27c-f6f7b9212eaa",
+		"name": "UPayments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4942578"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"categories"
+					]
+				},
+				"description": "Get list of all categories"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Samsung Galaxy",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "25.22",
+							"type": "default"
+						},
+						{
+							"key": "category",
+							"value": "2",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "the description on the product",
+							"type": "default"
+						},
+						{
+							"key": "avatar",
+							"value": "data:image/png;base64,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",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"products"
+					]
+				},
+				"description": "Add product with base64 encoding image as avatar"
+			},
+			"response": []
+		},
+		{
+			"name": "All Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"products"
+					]
+				},
+				"description": "get all products in single api"
+			},
+			"response": []
+		},
+		{
+			"name": "All Products with Pager",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				},
+				"description": "get 10 product each with page number"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				},
+				"description": "get the details of product with passing the id of the product"
+			},
+			"response": []
+		},
+		{
+			"name": "Product Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"products",
+						"2"
+					]
+				},
+				"description": "delete the specific product by passing the id in the url"
+			},
+			"response": []
+		},
+		{
+			"name": "Cart Save",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "session_id",
+							"value": "avca34DFv",
+							"type": "default"
+						},
+						{
+							"key": "product_id",
+							"value": "1",
+							"type": "default"
+						},
+						{
+							"key": "qty",
+							"value": "1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"cart"
+					]
+				},
+				"description": "Add Product to cart"
+			},
+			"response": []
+		},
+		{
+			"name": "Cart Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\":\"avca34DFv\",\n    \"product_id\":1,\n    \"qty\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/cart/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"cart",
+						"1"
+					]
+				},
+				"description": "update cart with userid and session id"
+			},
+			"response": []
+		},
+		{
+			"name": "Cart Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WHfCDCmGajcI6Ohjnjii",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\":\"avca34DFv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/cart/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"cart",
+						"1"
+					]
+				},
+				"description": "Delete the cart "
+			},
+			"response": []
+		},
+		{
+			"name": "Cart List",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "X1FRls7Op5VM4NiGgro0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"session_id\":\"avca34DFv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/UPayments/public/api/v1/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"UPayments",
+						"public",
+						"api",
+						"v1",
+						"cart"
+					]
+				},
+				"description": "List all cart items"
+			},
+			"response": []
+		}
+	]
+}
